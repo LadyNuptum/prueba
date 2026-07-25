@@ -11,9 +11,9 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Service
-@Primary
-@Qualifier
+//@Service
+//@Primary
+
 public class EnvioServiceMapImpl implements  EnvioService{
 
     private final Map<String, Envio> envios = new ConcurrentHashMap<>();
@@ -44,6 +44,7 @@ public class EnvioServiceMapImpl implements  EnvioService{
 
     @Override
     public Envio save(Envio envio) {
+
         if(envio.getId() == null ||envio.getId().isEmpty()){
             envio.setId(UUID.randomUUID().toString());
         }
